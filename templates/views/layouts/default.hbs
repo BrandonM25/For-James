@@ -1,101 +1,158 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>iJnApparel</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href="/styles/site.min.css" rel="stylesheet">
 
-		{{!-- This file provides the default styling for the KeystoneJS Content Editor
-			- only renders when user is logged in and admin--}}
-		{{{isAdminEditorCSS user}}}
-
-		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8 --}}
-		<!--[if lt IE 9]>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iJnApparel</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link href="/styles/site.min.css" rel="stylesheet"> {{!-- This file provides the default styling for the KeystoneJS Content
+	Editor - only renders when user is logged in and admin--}} {{{isAdminEditorCSS user}}}
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="/styles/compiled2.min.css" rel="stylesheet"> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements
+	and media queries //- Safely remove this block if you are not targeting IE8 --}}
+	<!--[if lt IE 9]>
 			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
 			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+	<link href="/styles/style.css" rel="stylesheet">
+</head>
 
-	</head>
-	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">iJnApparel</a>
-						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
-						</div>
-					</div>
-				</div>
+<body>
+	<!-- Main navigation -->
+	<!--Navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<strong>iJnApparel</strong>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+				<ul class="nav navbar-nav mr-auto navbar-left">
+					{{# each navLinks}}
+					<li {{#ifeq ../section key}}class="nav-item active" {{else}}{{/ifeq}}>
+						<a class="nav-link" href="{{ href }}">{{ label }}</a>
+					</li>
+					{{/each}}
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					{{#if user}}
+					<li><a class="nav-link" href="/keystone/signout">Sign Out</a></li>
+					{{else}}
+					<li><a class="nav-link" href="/keystone/signin">Sign In</a></li>
+					{{/if}}
+				</ul>
 			</div>
 		</div>
-		<div id="body">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
+	</nav>
+	<!-- Navbar -->
+
+	<!-- The content block should contain the body of your template's content-->
+	{{{body}}}
+
+	<!-- Footer -->
+	<footer class="page-footer font-small elegant-color pt-4">
+
+		<!-- Footer Links -->
+		<div class="container text-center text-md-left">
+
+			<!-- Grid row -->
+			<div class="row">
+
+				<!-- Grid column -->
+				<div class="col-md-6 mt-md-0 mt-3">
+
+					<!-- Content -->
+					<h5 class="text-uppercase">Footer Content</h5>
+					<p>Here you can use rows and columns here to organize your footer content.</p>
+
 				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
+				<!-- Grid column -->
+
+				<hr class="clearfix w-100 d-md-none pb-3">
+
+				<!-- Grid column -->
+				<div class="col-md-3 mb-md-0 mb-3">
+
+					<!-- Links -->
+					<h5 class="text-uppercase">Store</h5>
+
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Shirts</a>
+						</li>
+						<li>
+							<a href="#!">Joggers</a>
+						</li>
+						<li>
+							<a href="#!">Jackets</a>
+						</li>
+						<li>
+							<a href="#!">Hats</a>
+						</li>
+					</ul>
+
 				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-3 mb-md-0 mb-3">
+
+					<!-- Links -->
+					<h5 class="text-uppercase">Links</h5>
+
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Link 1</a>
+						</li>
+						<li>
+							<a href="#!">Link 2</a>
+						</li>
+						<li>
+							<a href="#!">Link 3</a>
+						</li>
+						<li>
+							<a href="#!">Link 4</a>
+						</li>
+					</ul>
+
 				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
+				<!-- Grid column -->
+
 			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
+			<!-- Grid row -->
+
 		</div>
-		
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-		{{{isAdminEditorJS user}}}
-	</body>
+		<!-- Footer Links -->
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2018 Copyright:
+			<a href="https://mdbootstrap.com/bootstrap-tutorial/"> iJnApparel.com</a>
+		</div>
+		<!-- Copyright -->
+
+	</footer>
+	<!-- Footer -->
+	{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content Editor. If
+	you are not targeting IE8, //- you can upgrade to 2.1.4 (also bundled) for better performance. --}} {{!-- //- Customise
+	which Bootstrap javascript files are served by including //- them specifically here, instead of bootstrap-3.3.5.min.js --}}
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="/js/compiled4.min.js"></script> {{{isAdminEditorJS user}}}
+	<script type="text/javascript" src="/js/main.js"></script>
+</body>
+
 </html>

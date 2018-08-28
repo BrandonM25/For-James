@@ -1,0 +1,43 @@
+/* Required for full background image */
+
+html,
+body,
+header,
+.jarallax {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #b71c1c !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #b71c1c !important;
+  }
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+
+#apparel{
+    color: #b71c1c;
+}
+
+#best{
+    background-color: rgba(0, 0, 0, 0.7);
+}
