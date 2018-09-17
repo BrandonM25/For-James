@@ -2,10 +2,11 @@ html, body, header, .jarallax {
   height: 100%;
 }
 
-@media (max-width: 740px) {
-  html, body, header, .jarallax {
-    height: 100vh;
-  }
+.jarallax {
+  background-image: url('/images/DSC00262.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .top-nav-collapse {
@@ -16,39 +17,58 @@ html, body, header, .jarallax {
   background: transparent !important;
 }
 
-@media (max-width: 991px) {
-  .navbar:not(.top-nav-collapse) {
-    background: whitesmoke !important;
-  }
-}
-
 h5 {
   letter-spacing: 3px;
 }
 
-#apparel{
-    color: #b71c1c;
+#apparel {
+  color: #b71c1c;
 }
 
-#best{
-    background-color: rgba(0, 0, 0, 0.7);
+#best {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.branding{
+.branding {
   height: 50px;
   width: 50px;
 }
 
-.hero-img{
+.hero-img {
   height: 400px;
   width: 400px;
 }
 
-.logo{
+.logo {
   height: 180px;
   width: 240px;
 }
 
-.side-nav{
+.side-nav {
   background-color: whitesmoke
+}
+
+@media (max-width: 740px) {
+  html, body, header, .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 740px) {
+  .view {
+    background-color: rgba(242, 246, 248, 1);
+  }
+}
+
+@media (max-width: 740px) {
+  .hero-img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: whitesmoke !important;
+  }
 }
