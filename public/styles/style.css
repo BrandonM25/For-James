@@ -55,7 +55,7 @@ h5 {
 }
 
 @media (max-width: 740px) {
-  .view {
+  .view, .jarallax {
     background-color: rgba(242, 246, 248, 1);
   }
 }
