@@ -13,6 +13,6 @@ ProductCategory.add({
 	name: { type: String, required: true },
 });
 
-ProductCategory.relationship({ ref: 'Product', path: 'products', refPath: 'categories' });
+ProductCategory.relationship({ ref: 'Product', path: 'products', refPath: 'productcategories' });
 
 ProductCategory.register();

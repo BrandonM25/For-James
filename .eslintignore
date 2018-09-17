@@ -1,2 +1,5 @@
 public/js/bootstrap
 public/js/jquery
+models
+views
+routes

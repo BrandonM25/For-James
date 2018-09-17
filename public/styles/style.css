@@ -1,23 +1,15 @@
-/* Required for full background image */
-
-html,
-body,
-header,
-.jarallax {
+html, body, header, .jarallax {
   height: 100%;
 }
 
 @media (max-width: 740px) {
-  html,
-  body,
-  header,
-  .jarallax {
+  html, body, header, .jarallax {
     height: 100vh;
   }
 }
 
 .top-nav-collapse {
-  background-color: #b71c1c !important;
+  background-color: whitesmoke !important;
 }
 
 .navbar:not(.top-nav-collapse) {
@@ -26,7 +18,7 @@ header,
 
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
-    background: #b71c1c !important;
+    background: whitesmoke !important;
   }
 }
 
@@ -40,4 +32,23 @@ h5 {
 
 #best{
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.branding{
+  height: 50px;
+  width: 50px;
+}
+
+.hero-img{
+  height: 400px;
+  width: 400px;
+}
+
+.logo{
+  height: 180px;
+  width: 240px;
+}
+
+.side-nav{
+  background-color: whitesmoke
 }
