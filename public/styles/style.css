@@ -26,7 +26,7 @@ h5 {
 }
 
 #best {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: whitesmoke;
 }
 
 .branding {
@@ -46,6 +46,14 @@ h5 {
 
 .side-nav {
   background-color: whitesmoke
+}
+
+.blog-view{
+  height: 600px;
+  background-image: url('/images/thecross.jpeg'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center;
 }
 
 @media (max-width: 740px) {

@@ -1,21 +1,112 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
+<!--Intro-->
+<section>
+	<div class="container">
+		<!-- <img src="https://mdbootstrap.com/img/Photos/Others/nature3.jpg" class="img-fluid" alt="First sample image"> -->
+		<!--Excerpt-->
+		<br>
+		<h1 class="text-center text-uppercase dark-grey-text pb-3 mt-5 pt-5 wow fadeIn" data-wow-delay="0.2s">{{data.post.title}}</h1>
+		<p><a href="/blog">&larr; back to the blog</a></p>
+		<hr>
+	</div>
+</section>
+<!--/Intro-->
+
+<!--Blog-->
+<section>
+	<div class="container mt-5 pt-3">
+
+		<div class="row">
+
+			<!--Main listing-->
+			<div class="col-lg-8 col-12 mt-1 mx-lg-4">
+
+				<!--Section: Classic blog listing-->
+				<section class="section classic-blog-listing">
+
+					<!--Grid row-->
+					<div class="row mb-5" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+						<!--Grid column-->
+						<div class="col-md-12">
+
+							<!--Image-->
+
+							<div class="view overlay z-depth-1 mb-3">
+								{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image crop='fit' }}}" class="img-fluid">{{/if}}
+								<a href="#!">
+									<div class="mask rgba-white-slight"></div>
+								</a>
+							</div>
+
+							<!--Excerpt-->
+
+							<h2 class="text-center font-weight-bold dark-grey-text pb-3">
+								<strong>{{{title}}}</strong>
+							</h2>
+
+							<p class="dark-grey-text">{{{data.post.content.extended}}}</p>
+
+							<hr>
+							<!--Post data-->
+							<div class="post-data mt-3 pt-3 grey-text">
+								<h6>{{#if data.post.author.name.first}}By {{data.post.author.name.first}}{{/if}} on
+									{{{data.post.publishedDate}}}</h6>
+							</div>
+							<!--Grid row-->
+							<div class="row mb-4 wow fadeIn" data-wow-delay="0.2s">
+
+								<!--Grid column-->
+								<div class="col-md-12 text-center">
+
+									<h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
+										<strong>Share this post: </strong>
+									</h4>
+
+									<button type="button" class="btn btn-fb btn-sm">
+										<i class="fa fa-facebook left"></i> Facebook</button>
+									<!--Twitter-->
+									<button type="button" class="btn btn-tw btn-sm">
+										<i class="fa fa-twitter left"></i> Twitter</button>
+									<!--Google +-->
+									<button type="button" class="btn btn-gplus btn-sm">
+										<i class="fa fa-google-plus left"></i> Google +</button>
+
+									<hr class="mt-5">
+								</div>
+								<!--Grid column-->
+
+							</div>
+							<!--Grid row-->
+
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+
+
+				</section>
+
+			</div>
+			<!--Sidebar-->
+			<div class="col-lg-3 col-12 px-4 mt-1 blue-grey lighten-5">
+				<!--CATEGORIES-->
+				<section class="mb-4">
+					<hr class="mt-4">
+					<p class="font-weight-bold dark-grey-text text-center spacing">
+						<strong>CATEGORIES</strong>
+					</p>
+					<hr>
+					<div class="list-group">
+						<a href="/blog" class="active list-group-item">All Categories</a>
+						{{# each data.categories.results }}
+						<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+						{{/each}}
+					</div>
+				</section>
+				<!--CATEGORIES-->
 				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
-					{{{data.post.content.extended}}}
-				</div>
-			</article>
+			</div>
+			<!--Sidebar-->
 		</div>
 	</div>
-</div>
+</section>
+

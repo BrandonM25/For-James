@@ -1,33 +1,97 @@
-<div class="container">
-	<h1>Blog</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
-			<div class="blog">
-				{{# each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
-							{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</p>
-					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
-					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+<!-- Intro Section -->
+<div class="view jarallax blog-view" data-jarallax='{"speed": 0.2}'>
+	<div class="mask rgba-black-light">
+		<div class="container h-100 d-flex justify-content-center align-items-center">
+			<div class="row pt-5 mt-3">
+				<div class="col-md-12">
+					<div class="text-center">
+						<h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-3 wow fadeInDown" data-wow-delay="0.3s">
+							<strong>welcome to our blog</strong>
+						</h1>
+						<hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+						<h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s">
+							<strong>Showing {{ data.posts.results.length}} posts</strong>
+						</h5>
+					</div>
 				</div>
-				{{/each}}
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
 			</div>
 		</div>
 	</div>
-	{{>pagination}}
 </div>
+<!--/Intro-->
+<!--Main layout-->
+<main class="pt-3">
+
+	<!--Blog-->
+	<section>
+		<div class="container mt-5 pt-3">
+			<div class="row">
+				<!--Main listing-->
+				<div class="col-lg-8 col-12 mt-1 mx-lg-4">
+					<!--Section: Classic blog listing-->
+					<section class="section classic-blog-listing">
+						{{# each data.posts.results}}
+						<!--Grid row-->
+						<div class="row mb-5" data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}">
+							<!--Grid column-->
+							<div class="col-md-12">
+								<!--Image-->
+								<div class="view overlay z-depth-1 mb-3">
+									<img src="{{{cloudinaryUrl image crop='fit' }}}" class="img-fluid">
+									<a href="#!">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+								<!--Excerpt-->
+								<a href="" class="">
+									<p class="text-center font-weight-bold gold-text mt-4">{{{categoryList categories prefix="Posted in "}}}</p>
+								</a>
+								<h2 class="text-center font-weight-bold dark-grey-text pb-3">
+									<strong>{{{title}}}</strong>
+								</h2>
+								<p class="dark-grey-text">{{{content.brief}}}</p>
+								<div class="text-center pb-2">
+									{{#if content.extended}}<a class="btn btn-transparent btn-sm font-weight-bold btn-rounded dark-grey-text" href="{{postUrl slug}}">Read
+										more</a>{{/if}}
+								</div>
+								<hr>
+								<!--Post data-->
+								<div class="post-data mt-3 pt-3 grey-text">
+									<h6>{{#if author.name.first}}By {{author.name.first}}{{/if}} on {{{publishedDate}}}</h6>
+								</div>
+							</div>
+							<!--Grid column-->
+						</div>
+						<!--Grid row-->
+
+						{{/each}}
+					</section>
+
+				</div>
+				<!--Sidebar-->
+				<div class="col-lg-3 col-12 px-4 mt-1 blue-grey lighten-5">
+					<!--CATEGORIES-->
+					<section class="mb-4">
+						<hr class="mt-4">
+						<p class="font-weight-bold dark-grey-text text-center spacing">
+							<strong>CATEGORIES</strong>
+						</p>
+						<hr>
+						<div class="list-group">
+							<a href="/blog" class="active list-group-item">All Categories</a>
+							{{# each data.categories }}
+							<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+							{{/each}}
+						</div>
+					</section>
+					<!--CATEGORIES-->
+					<hr>
+				</div>
+				<!--Sidebar-->
+			</div>
+			{{>pagination}}
+		</div>
+	</section>
+
+</main>
+

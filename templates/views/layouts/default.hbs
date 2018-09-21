@@ -54,10 +54,10 @@
 					<!--/Social-->
 					<!-- Side navigation links -->
 					<li>
-						<ul class="collapsible collapsible-accordion">
+						<ul class="collapsible">
 							{{# each navLinks}}
 							<li {{#ifeq ../section key}} class="nav-item active" {{else}} {{/ifeq}}>
-								<h5><strong><a class="nav-link flex-center black-text" href="{{ href }}">{{ label }}</a></strong></h5>
+								<h5><strong><a class="nav-link flex-center black-text font-weight-bold" href="{{ href }}">{{ label }}</a></strong></h5>
 							</li>
 							{{/each}}
 						</ul>
@@ -78,7 +78,7 @@
 				<div class="breadcrumb-dn mr-auto ml-2">
 					<img src="/images/PNG file - Copy.png" class="branding" alt="">
 				</div>
-				<ul class="nav navbar-nav nav-flex-icons ml-auto black-text">
+				<ul class="nav navbar-nav nav-flex-icons ml-auto black-text font-weight-bold">
 					{{#if user}}
 					<li><a class="nav-link" href="/keystone/signout">Sign Out</a></li>
 					{{else}}
