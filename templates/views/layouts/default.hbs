@@ -22,6 +22,7 @@
 			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/js/events.js"></script>
 </head>
 
 <body>
@@ -80,10 +81,11 @@
 				</div>
 				<ul class="nav navbar-nav nav-flex-icons ml-auto black-text font-weight-bold">
 					{{#if user}}
-					<li><a class="nav-link" href="/keystone/signout">Sign Out</a></li>
+					<li><a class="nav-link" href="/keystone/signout" id="signout">Sign Out</a></li>
 					{{else}}
-					<li><a class="nav-link" href="/keystone/signin">Sign In</a></li>
+					<li><a class="nav-link" href="/keystone/signin" id="signin">Sign In</a></li>
 					{{/if}}
+					<li><a class="nav-link" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 				</ul>
 			</nav>
 			</div>

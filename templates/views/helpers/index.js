@@ -115,6 +115,33 @@ module.exports = function () {
 		return new hbs.SafeString(output);
 	};
 
+	_helpers.productcategoryList = function (productcategories, options) {
+		var autolink = _.isString(options.hash.autolink) && options.hash.autolink === 'false' ? false : true;
+		var separator = _.isString(options.hash.separator) ? options.hash.separator : ', ';
+		var prefix = _.isString(options.hash.prefix) ? options.hash.prefix : '';
+		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
+		var output = '';
+
+		function createproductTagList (producttags) {
+			var producttagNames = _.map(producttags, 'name');
+
+			if (autolink) {
+				return _.map(producttags, function (producttag) {
+					return linkTemplate({
+						url: ('/menus/' + producttag.key),
+						text: _.escape(producttag.name),
+					});
+				}).join(separator);
+			}
+			return _.escape(producttagNames.join(separator));
+		}
+
+		if (productcategories && productcategories.length) {
+			output = prefix + createproductTagList(productcategories) + suffix;
+		}
+		return new hbs.SafeString(output);
+	};
+
 	/**
 	 * KeystoneJS specific helpers
 	 * ===========================
@@ -205,6 +232,14 @@ module.exports = function () {
 	// create the category url for a blog-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
+	};
+
+	_helpers.productcategoryUrl = function (productcategorySlug, options) {
+		return ('/products/' + productcategorySlug);
+	};
+
+	_helpers.productUrl = function (productSlug, options) {
+		return ('/products/product/' + productSlug);
 	};
 
 	// ### Pagination Helpers

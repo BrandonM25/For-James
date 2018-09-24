@@ -56,6 +56,16 @@ h5 {
   background-position: center center;
 }
 
+.product-view{
+  height: 600px;
+  background-image: url('/images/DSC00032.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center;
+}
+
+
+
 @media (max-width: 740px) {
   html, body, header, .jarallax {
     height: 100vh;
@@ -63,7 +73,7 @@ h5 {
 }
 
 @media (max-width: 740px) {
-  .view, .jarallax {
+  .jarallax {
     background-color: rgba(242, 246, 248, 1);
   }
 }

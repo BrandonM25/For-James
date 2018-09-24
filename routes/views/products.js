@@ -7,12 +7,12 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Init locals
-	locals.section = 'products';
+	locals.section = 'store';
 	locals.filters = {
 		productcategory: req.params.productcategory,
 	};
 	locals.data = {
-		posts: [],
+		products: [],
 		productcategories: [],
 	};
 
@@ -30,7 +30,7 @@ exports = module.exports = function (req, res) {
 			// Load the counts for each category
 			async.each(locals.data.productcategories, function (productcategory, next) {
 
-				keystone.list('Post').model.count().where('categories').in([productcategory.id]).exec(function (err, count) {
+				keystone.list('Product').model.count().where('productcategories').in([productcategory.id]).exec(function (err, count) {
 					productcategory.productCount = count;
 					next(err);
 				});
@@ -57,7 +57,7 @@ exports = module.exports = function (req, res) {
 	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').paginate({
+		var q = keystone.list('Product').paginate({
 			page: req.query.page || 1,
 			perPage: 10,
 			maxPages: 10,
@@ -68,12 +68,12 @@ exports = module.exports = function (req, res) {
 			.sort('-publishedDate')
 			.populate('author categories');
 
-		if (locals.data.category) {
-			q.where('productcategories').in([locals.data.category]);
+		if (locals.data.productcategory) {
+			q.where('productcategories').in([locals.data.productcategory]);
 		}
 
 		q.exec(function (err, results) {
-			locals.data.posts = results;
+			locals.data.products = results;
 			next(err);
 		});
 	});

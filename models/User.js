@@ -5,12 +5,16 @@ var Types = keystone.Field.Types;
  * User Model
  * ==========
  */
-var User = new keystone.List('User');
+var User = new keystone.List('User', {
+	nocreate: true,
+	noedit: true,
+});
 
 User.add({
-	name: { type: Types.Name, required: true, index: true },
-	email: { type: Types.Email, initial: true, required: true, unique: true, index: true },
-	password: { type: Types.Password, initial: true, required: true },
+	name: { type: Types.Name },
+	email: { type: Types.Email },
+	password: { type: Types.Password },
+	phone: { type: String },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
@@ -30,5 +34,7 @@ User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' });
 /**
  * Registration
  */
+User.defaultSort = '-name';
 User.defaultColumns = 'name, email, isAdmin';
 User.register();
+

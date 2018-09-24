@@ -1,1 +1,92 @@
-PRODUCTS
+<div class="view jarallax product-view" data-jarallax='{"speed": 0.2}'>
+    <div class="mask rgba-white-slight">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="row pt-5 mt-3">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h1 class="h1-reponsive red-text text-uppercase font-weight-bold mb-3 wow fadeInDown"
+                            data-wow-delay="0.3s">
+                            <strong>The jesus store</strong>
+                        </h1>
+                        <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+                        <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s">
+                            <strong></strong>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Intro-->
+
+<!--Main layout-->
+<main>
+    <div class="container">
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light mdb-color lighten-3 mt-3 mb-5">
+
+            <!-- Navbar brand -->
+            <span class="navbar-brand">Categories:</span>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    {{# each data.productcategories }}
+                    <li class="nav-item">
+                        <a class="menu-link nav-link active" href="{{productcategoryUrl key}}">
+                            <h5>{{name}}</h5>
+                        </a>
+                    </li>
+                    {{/each}}
+
+                </ul>
+                <!-- Links -->
+
+                <form class="form-inline">
+                    <div class="md-form mt-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </form>
+            </div>
+            <!-- Collapsible content -->
+
+        </nav>
+        <!--/.Navbar-->
+        <!-- Grid column -->
+        <div class="row mb-5">
+            {{# each data.products.results}}
+            <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+
+                <!-- Collection card -->
+                <div class="card collection-card z-depth-1-half">
+                    <!-- Card image -->
+                    <div class="view zoom">
+                        <img src="{{{cloudinaryUrl image crop='fit'}}}" class="img-fluid" alt="">
+                        <div class="stripe dark">
+                            <a href="{{productUrl slug}}">
+                                <p>{{{title}}}
+                                    <i class="fa fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card image -->
+                </div>
+                <!-- Collection card -->
+
+            </div>
+            <!-- Grid column -->
+            {{/each}}
+        </div>
+    </div>
+</main>
