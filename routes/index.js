@@ -40,8 +40,8 @@ exports = module.exports = function (app) {
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
-	app.get('/products/:productcategory?', middleware.requireUser, routes.views.products);
-	app.get('/products/product/:product', middleware.requireUser, routes.views.product);
+	app.get('/products/:productcategory?', routes.views.products);
+	app.get('/products/product/:product', routes.views.product);
 	app.get('/about', routes.views.about);
 	app.all('/contact', routes.views.contact);
 	app.get('/register', routes.views.register);
