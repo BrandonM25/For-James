@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<!-- 
+	instagram.com/ijnapparel
+	
+-->
 
 <head>
 	<meta charset="utf-8">
@@ -25,173 +29,170 @@
 	<script src="/js/events.js"></script>
 </head>
 
-<body>
 
-	<body class="hidden-sn">
-		<!-- Main navigation -->
-		<!--Navbar-->
 
-		<!--Double navigation-->
-		<header>
-			<!-- Sidebar navigation -->
-			<div id="slide-out" class="side-nav">
-				<ul class="custom-scrollbar">
-					<!-- Logo -->
-					<li class="">
-						<div class="logo-wrapper waves-light">
-							<a href="/"><img src="/images/PNG file - Copy.png" class="logo"></a>
-						</div>
-					</li>
-					<!--/. Logo -->
-					<!--Social-->
-					<li>
-						<ul class="social">
-							<li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook black-text"> </i></a></li>
-							<li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest black-text"> </i></a></li>
-							<li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus black-text"> </i></a></li>
-							<li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter black-text"> </i></a></li>
-						</ul>
-					</li>
-					<!--/Social-->
-					<!-- Side navigation links -->
-					<li>
-						<ul class="collapsible">
-							{{# each navLinks}}
-							<li {{#ifeq ../section key}} class="nav-item active" {{else}} {{/ifeq}}>
-								<h5><strong><a class="nav-link flex-center black-text font-weight-bold" href="{{ href }}">{{ label }}</a></strong></h5>
-							</li>
-							{{/each}}
-						</ul>
-					</li>
-					<!--/. Side navigation links -->
-				</ul>
-				<div class="sidenav-bg mask-strong"></div>
+<body class="hidden-sn">
+	<!-- Main navigation -->
+	<!--Navbar-->
+
+	<!--Double navigation-->
+	<header>
+		<!-- Sidebar navigation -->
+		<div id="slide-out" class="side-nav">
+			<ul class="custom-scrollbar">
+				<!-- Logo -->
+				<li class="">
+					<div class="logo-wrapper waves-light">
+						<a href="/"><img src="/images/PNG file - Copy.png" class="logo"></a>
+					</div>
+				</li>
+				<!--/. Logo -->
+				<!--Social-->
+				<li>
+					<ul class="social">
+						<li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook black-text"> </i></a></li>
+						<li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest black-text"> </i></a></li>
+						<li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus black-text"> </i></a></li>
+						<li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter black-text"> </i></a></li>
+					</ul>
+				</li>
+				<!--/Social-->
+				<!-- Side navigation links -->
+				<li>
+					<ul class="collapsible">
+						{{# each navLinks}}
+						<li {{#ifeq ../section key}} class="nav-item active" {{else}} {{/ifeq}}>
+							<h5><strong><a class="nav-link flex-center black-text font-weight-bold" href="{{ href }}">{{ label }}</a></strong></h5>
+						</li>
+						{{/each}}
+					</ul>
+				</li>
+				<!--/. Side navigation links -->
+			</ul>
+			<div class="sidenav-bg mask-strong"></div>
+		</div>
+		<!--/. Sidebar navigation -->
+		<!-- Navbar -->
+
+		<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar fixed-top double-nav navbar-light">
+			<!-- SideNav slide-out button -->
+			<div class="float-left">
+				<a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fa fa-bars"></i></a>
 			</div>
-			<!--/. Sidebar navigation -->
-			<!-- Navbar -->
-
-			<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar fixed-top double-nav navbar-light">
-				<!-- SideNav slide-out button -->
-				<div class="float-left">
-					<a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fa fa-bars"></i></a>
-				</div>
-				<!-- Breadcrumb-->
-				<div class="breadcrumb-dn mr-auto ml-2">
-					<img src="/images/PNG file - Copy.png" class="branding" alt="">
-				</div>
-				<ul class="nav navbar-nav nav-flex-icons ml-auto black-text font-weight-bold">
-					{{#if user}}
-					<li><a class="nav-link" href="/keystone/signout" id="signout">Sign Out</a></li>
-					{{else}}
-					<li><a class="nav-link" href="/keystone/signin" id="signin">Sign In</a></li>
-					{{/if}}
-					<li><a class="nav-link" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-				</ul>
-			</nav>
+			<!-- Breadcrumb-->
+			<div class="breadcrumb-dn mr-auto ml-2">
+				<img src="/images/PNG file - Copy.png" class="branding" alt="">
 			</div>
-			<!-- /.Navbar -->
+			<ul class="nav navbar-nav nav-flex-icons ml-auto black-text font-weight-bold">
+				{{#if user}}
+				<li><a class="nav-link" href="/signout" id="signout">Sign Out</a></li>
+				{{else}}
+				<li><a class="nav-link" href="/signin" id="signin">Sign In</a></li>
+				{{/if}}
+				<li><a class="nav-link" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+			</ul>
+		</nav>
+		</div>
+		<!-- /.Navbar -->
 
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
+		<!-- The content block should contain the body of your template's content-->
+		{{{body}}}
 
-			<!-- Footer -->
-			<footer class="page-footer font-small elegant-color pt-4">
+		<!-- Footer -->
+		<footer class="page-footer font-small elegant-color pt-4">
 
-				<!-- Footer Links -->
-				<div class="container text-center text-md-left">
+			<!-- Footer Links -->
+			<div class="container text-center text-md-left">
 
-					<!-- Grid row -->
-					<div class="row">
+				<!-- Grid row -->
+				<div class="row">
 
-						<!-- Grid column -->
-						<div class="col-md-6 mt-md-0 mt-3">
+					<!-- Grid column -->
+					<div class="col-md-6 mt-md-0 mt-3">
 
-							<!-- Content -->
-							<h5 class="text-uppercase">iJn Apparel</h5>
-							<p>"If ye shall ask any thing in my name, I will do it."<br>John 14:14</p>
-
-						</div>
-						<!-- Grid column -->
-
-						<hr class="clearfix w-100 d-md-none pb-3">
-
-						<!-- Grid column -->
-						<div class="col-md-3 mb-md-0 mb-3">
-
-							<!-- Links -->
-							<h5 class="text-uppercase">Store</h5>
-
-							<ul class="list-unstyled">
-								<li>
-									<a href="#!">Shirts</a>
-								</li>
-								<li>
-									<a href="#!">Joggers</a>
-								</li>
-								<li>
-									<a href="#!">Jackets</a>
-								</li>
-								<li>
-									<a href="#!">Hats</a>
-								</li>
-							</ul>
-
-						</div>
-						<!-- Grid column -->
-
-						<!-- Grid column -->
-						<div class="col-md-3 mb-md-0 mb-3">
-
-							<!-- Links -->
-							<h5 class="text-uppercase">Links</h5>
-
-							<ul class="list-unstyled">
-								<li>
-									<a href="#!">Link 1</a>
-								</li>
-								<li>
-									<a href="#!">Link 2</a>
-								</li>
-								<li>
-									<a href="#!">Link 3</a>
-								</li>
-								<li>
-									<a href="#!">Link 4</a>
-								</li>
-							</ul>
-
-						</div>
-						<!-- Grid column -->
+						<!-- Content -->
+						<h5 class="text-uppercase">iJn Apparel</h5>
+						<p>"If ye shall ask any thing in my name, I will do it."<br>John 14:14</p>
 
 					</div>
-					<!-- Grid row -->
+					<!-- Grid column -->
+
+					<hr class="clearfix w-100 d-md-none pb-3">
+
+					<!-- Grid column -->
+					<div class="col-md-3 mb-md-0 mb-3">
+
+						<!-- Links -->
+						<h5 class="text-uppercase">Store</h5>
+
+						<ul class="list-unstyled">
+							<li>
+								<a href="#!">Shirts</a>
+							</li>
+							<li>
+								<a href="#!">Joggers</a>
+							</li>
+							<li>
+								<a href="#!">Jackets</a>
+							</li>
+							<li>
+								<a href="#!">Hats</a>
+							</li>
+						</ul>
+
+					</div>
+					<!-- Grid column -->
+
+					<!-- Grid column -->
+					<div class="col-md-3 mb-md-0 mb-3">
+
+						<!-- Links -->
+						<h5 class="text-uppercase">Naivgation</h5>
+
+						<ul class="list-unstyled">
+							<li>
+								<a href="/about">About</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+							</li>
+							<li>
+								<a href="/contact">Prayer Requests</a>
+							</li>
+						</ul>
+
+					</div>
+					<!-- Grid column -->
 
 				</div>
-				<!-- Footer Links -->
+				<!-- Grid row -->
 
-				<!-- Copyright -->
-				<div class="footer-copyright text-center py-3">© 2018 Copyright:
-					<a href="https://ijnapparel.herokuapp.com/"> iJnApparel.com</a>
-				</div>
-				<!-- Copyright -->
+			</div>
+			<!-- Footer Links -->
 
-			</footer>
-			<!-- Footer -->
-			{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content
-			Editor. If
-			you are not targeting IE8, //- you can upgrade to 2.1.4 (also bundled) for better performance. --}} {{!-- //-
-			Customise
-			which Bootstrap javascript files are served by including //- them specifically here, instead of
-			bootstrap-3.3.5.min.js --}}
-			<!-- JQuery -->
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<!-- Bootstrap tooltips -->
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-			<!-- Bootstrap core JavaScript -->
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-			<!-- MDB core JavaScript -->
-			<script type="text/javascript" src="/js/compiled4.min.js"></script> {{{isAdminEditorJS user}}}
-			<script type="text/javascript" src="/js/main.js"></script>
-	</body>
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">© 2018 Copyright:
+				<a href="https://ijnapparel.herokuapp.com/"> iJnApparel.com</a>
+			</div>
+			<!-- Copyright -->
+
+		</footer>
+		<!-- Footer -->
+		{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content
+		Editor. If
+		you are not targeting IE8, //- you can upgrade to 2.1.4 (also bundled) for better performance. --}} {{!-- //-
+		Customise
+		which Bootstrap javascript files are served by including //- them specifically here, instead of
+		bootstrap-3.3.5.min.js --}}
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="/js/compiled4.min.js"></script> {{{isAdminEditorJS user}}}
+		<script type="text/javascript" src="/js/main.js"></script>
+</body>
 
 </html>

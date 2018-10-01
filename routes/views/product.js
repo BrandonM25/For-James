@@ -41,6 +41,10 @@ exports = module.exports = function (req, res) {
 
 	});
 
+	view.on('post', function(next) {
+		var q = keystone.list('User').model.updateOne().where('state', 'published').populate('cart');
+	})
+
 	// Render the view
 	view.render('product');
 };

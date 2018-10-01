@@ -1,17 +1,68 @@
+<div class="view jarallax contact" data-jarallax='{"speed": 0.2}' style="background-image: url('https://cdn.pixabay.com/photo/2017/03/27/15/16/praying-2179326_1280.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	<!-- Mask & flexbox options-->
+	<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+		<!-- Content -->
+		<div class="container">
+			<!--Grid row-->
+			<div class="row pt-lg-5 mt-lg-5">
+				<!--Grid column-->
+				<div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
+					<h1 class="display-4 head">Prayer Requests</h1>
+					<hr class="hr-light">
+					<h6 class="mb-3">We are commited to supporting our brothers and sisters in prayer. Let us join with you in your struggles and thanksgivings, by making your requsts known to the Lord! </h6>
+				</div>
+				<!--Grid column-->
+				<div class="col-sm-6 col-md-6">
+					{{#if enquirySubmitted}}
+					<h3>Thanks for getting in touch.</h3>
+					{{else}}
+					<form method="post">
+						<input type="hidden" name="action" value="contact">
+						<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+							<label class="white-text">Name</label>
+							<input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
+						</div>
+						<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+							<label class="white-text">Email</label>
+							<input type="email" name="email" class="form-control" value="{{formData.email}}">
+						</div>
+						<div class="form-group">
+							<label class="white-text">Phone</label>
+							<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
+						</div>
+						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+							<label class="white-text">Prayer Request</label>
+							<textarea name="message" placeholder="Your Request..." rows="4" class="form-control">{{formData.message}}</textarea>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">Send</button>
+						</div>
+					</form>
+					{{/if}}
+				</div>
+			</div>
+			<!--Grid row-->
+		</div>
+		<!-- Content -->
+	</div>
+	<!-- Mask & flexbox options-->
+</div>
+<!-- Full Page Intro -->
+
 <div class="container">
 	<h1>Contact Us</h1>
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-md-6">
+		<div class="col-sm-4 col-md-4">
 			{{#if enquirySubmitted}}
-			<h3>Thanks for getting in touch.</h3>
+			<h3>Thanks for getting letting us partner with you in your prayer.</h3>
 			{{else}}
 			<form method="post">
 				<input type="hidden" name="action" value="contact">
 				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
 					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+					<input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
 				</div>
 				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
 					<label>Email</label>

@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require('../../models/User');
 var keystone = require('keystone');
 
-router.post('/signin', function (req, res) {
+router.post('/signin123', function (req, res) {
 
     if (!req.body.email || !req.body.password) return res.json({ success: false });
 
@@ -39,17 +39,17 @@ router.post('/signin', function (req, res) {
     });
 })
 
-router.all('/signout', function (req, res) {
+router.all('/signout123', function (req, res) {
     keystone.session.signout(req, res, function () {
-        res.render('index');
         res.json({ 'signedout': true });
+        res.redirect('/index');
     });
 });
 
 router.all('/auth*', function checkAuth(req, res, next) {
     // you could check user permissions here too
     if (req.user) return next();
-    return res.status(403).json({ 'error': 'no access' });
+    return  res.status(403).json({ 'error': 'no access' });
   })
 
   module.exports = router;

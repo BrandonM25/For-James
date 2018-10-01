@@ -15,6 +15,12 @@ User.add({
 	email: { type: Types.Email },
 	password: { type: Types.Password },
 	phone: { type: String },
+	cart: {
+		name: String, 
+		quantity: Number, 
+		type: String, 
+		price: Number 
+	}
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
