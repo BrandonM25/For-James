@@ -64,7 +64,13 @@ h5 {
   background-position: center center;
 }
 
+.register-view{
+  height: 100%;
+}
 
+.register-head{
+  padding-top: 90px;
+}
 
 @media (max-width: 740px) {
   html, body, header, .jarallax {

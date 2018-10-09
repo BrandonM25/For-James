@@ -1,129 +1,95 @@
 <!-- Material form register -->
-
-
-    <h5 class="info-color white-text text-center py-4">
-        <strong>Sign up</strong>
-    </h5>
-
-    <!--Card content-->
-    {{!-- <div class="card-body px-lg-5 pt-0">
-
-        <!-- Form -->
-        <form class="text-center" style="color: #757575;">
-
-            <div class="form-row">
-                <div class="col">
-                    <!-- First name -->
-                    <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">First name</label>
-                    </div>
+<!-- Full Page Intro -->
+<div class="view register-view" style="background-image: url('/images/thecross.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
+        <!-- Content -->
+        <div class="container">
+            <!--Grid row-->
+            <div class="row pt-lg-5 mt-lg-5">
+                <!--Grid column-->
+                <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft register-head"
+                    data-wow-delay="0.3s">
+                    <h1 class="display-4 font-weight-bold">Register</h1>
+                    <hr class="hr-light">
+                    <h6 class="mb-3">Register here for your free account! Without registering you will not be able to
+                        shop in the store.</h6>
                 </div>
-                <div class="col">
-                    <!-- Last name -->
-                    <div class="md-form">
-                        <input type="email" id="materialRegisterFormLastName" class="form-control">
-                        <label for="materialRegisterFormLastName">Last name</label>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-md-6 col-xl-5 mb-4">
+                    <!-- Material form register -->
+                    <div class="card">
+
+                        <h5 class="card-header red darken-4 white-text text-center py-4">
+                            <strong>Sign up</strong>
+
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0">
+                            {{#if userRegistered}}
+                            <h3>You have successfully registered. Please log in.</h3>
+                            {{else}}
+                            <!-- Form -->
+                            <form class="text-center" method="post" style="color: #757575;">
+                                <input type="hidden" name="action" value="register">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <!-- First name -->
+                                        <div class="md-form {{#if validationErrors.name}}has-error{{/if}}">
+                                            <input type="text" id="materialRegisterFormFirstName" class="form-control"
+                                                name="name.full" value="{{formData.[name.full]}}">
+                                            <label for="materialRegisterFormFirstName">Full name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- E-mail -->
+                                <div class="md-form mt-0 {{#if validationErrors.email}}has-error{{/if}}">
+                                    <input type="email" id="materialRegisterFormEmail" class="form-control" name="email"
+                                        value="{{formData.email}}">
+                                    <label for="materialRegisterFormEmail">E-mail</label>
+                                </div>
+                                <!-- Password -->
+                                <div class="md-form {{#if validationErrors.password}}has-error{{/if}}">
+                                    <input type="password" id="materialRegisterFormPassword" class="form-control"
+                                        aria-describedby="materialRegisterFormPasswordHelpBlock" name="password" value="{{formData.password}}">
+                                    <label for="materialRegisterFormPassword">Password</label>
+                                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                        At least 8 characters and 1 digit
+                                    </small>
+                                </div>
+                                <!-- Phone number -->
+                                <div class="md-form form-actions">
+                                    <input type="password" id="materialRegisterFormPhone" class="form-control"
+                                        aria-describedby="materialRegisterFormPhoneHelpBlock" value="{{formData.phone}}"
+                                        name="phone">
+                                    <label for="materialRegisterFormPhone">Phone number (optional)</label>
+                                </div>
+                                <!-- Sign up button -->
+                                <button class="btn btn-outline-red darken-4 btn-block my-4 waves-effect z-depth-0" type="submit">Sign
+                                    Up</button>
+                                <hr>
+                                <!-- Terms of service -->
+                                <p>By clicking
+                                    <em>Sign Up</em> you agree to our
+                                    <a href="" target="_blank">terms of service</a></p>
+
+                            </form>
+                            <!-- Form -->
+                            {{/if}}
+                        </div>
+
                     </div>
+                    <!-- Material form register -->
                 </div>
+                <!--Grid column-->
             </div>
-
-            <!-- E-mail -->
-            <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" class="form-control">
-                <label for="materialRegisterFormEmail">E-mail</label>
-            </div>
-
-            <!-- Password -->
-            <div class="md-form">
-                <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                <label for="materialRegisterFormPassword">Password</label>
-                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                    At least 8 characters and 1 digit
-                </small>
-            </div>
-
-            <!-- Phone number -->
-            <div class="md-form">
-                <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                <label for="materialRegisterFormPhone">Phone number</label>
-                <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                    Optional - for two step authentication
-                </small>
-            </div>
-
-            <!-- Newsletter -->
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
-                <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our newsletter</label>
-            </div>
-
-            <!-- Sign up button -->
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="register">Sign
-                in</button>
-
-            <!-- Social register -->
-            <p>or sign up with:</p>
-
-            <a type="button" class="btn-floating btn-fb btn-sm">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a type="button" class="btn-floating btn-tw btn-sm">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a type="button" class="btn-floating btn-li btn-sm">
-                <i class="fa fa-linkedin"></i>
-            </a>
-            <a type="button" class="btn-floating btn-git btn-sm">
-                <i class="fa fa-github"></i>
-            </a>
-
-            <hr>
-
-            <!-- Terms of service -->
-            <p>By clicking
-                <em>Sign up</em> you agree to our
-                <a href="" target="_blank">terms of service</a> and
-                <a href="" target="_blank">terms of service</a>. </p>
-
-        </form>
-        <!-- Form -->
-
-    </div> --}}
-
-    <div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if userRegistered}}
-			<h3>You have successfully registered. Please log in.</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="register">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
-				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-                <div class="form-group {{#if validationErrors.password}}has-error{{/if}}">
-					<label>Password</label>
-					<input type="password" name="password" class="form-control" value="{{formData.password}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Register</button>
-				</div>
-			</form>
-			{{/if}}
-		</div>
-	</div>
+            <!--Grid row-->
+        </div>
+        <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
 </div>
+<!-- Full Page Intro -->
 
-
-
-<!-- Material form register -->
