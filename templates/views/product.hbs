@@ -114,8 +114,11 @@
                         <div class="mt-5">
                             <div class="row mt-3 mb-4">
                                 <div class="col-md-12 text-center text-md-left text-md-right">
-                                    <button class="btn btn-primary btn-rounded">
-                                        <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
+                                    <form method="post" action="/products">
+                                        <input name="id" value="{{{data.product.id}}}" hidden>
+                                        <button class="btn btn-primary btn-rounded" type="submit">
+                                        <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button> 
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -127,3 +130,5 @@
     </section>
     <!-- /.Section: Product detail -->
 </div>
+
+{{!-- <a href="" class="btn btn-primary">Add to Cart</a> --}}

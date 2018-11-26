@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var Product = keystone.list("Product");
 
 exports = module.exports = function (req, res) {
 
@@ -15,6 +16,7 @@ exports = module.exports = function (req, res) {
 		products: [],
 		productcategories: [],
 	};
+	locals.formData = req.body || {};
 
 	// Load all categories
 	view.on('init', function (next) {
@@ -77,6 +79,21 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 	});
+
+	view.on('post', function (next) {
+
+		var resRedirect = res;
+		var productId = req.body.id;
+		Product.model.findById(productId)
+			.exec(function (err, product) {
+				console.log(`Product ${productId} added to cart`);
+				req.session.cart.push(product);
+			})
+			.then(function (arg) {
+				resRedirect.redirect("/products");
+			})
+
+	})
 
 	// Render the view
 	view.render('products');

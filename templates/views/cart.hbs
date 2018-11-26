@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{# each cartContents}}
+    <tr>
+      <th scope="row"></th>
+      <td>{{{this.name}}}</td>
+      <td>{{{this.price}}}</td>
+      <td>{{{this.quantitiy}}}</td>
+      <td><img class="img-fluid" src="{{{this.imageUrl}}}"></img></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

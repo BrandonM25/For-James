@@ -40,8 +40,8 @@ exports = module.exports = function (app) {
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
-	app.get('/products/:productcategory?', routes.views.products);
-	app.get('/products/product/:product', routes.views.product);
+	app.all('/products/:productcategory?', routes.views.products);
+	app.all('/products/product/:product', routes.views.product);
 	app.get('/about', routes.views.about);
 	app.all('/contact', routes.views.contact);
 	app.get('/register', routes.views.register);
@@ -49,6 +49,7 @@ exports = module.exports = function (app) {
 	app.all('/signout', routes.views.signout);
 	app.all('/signin', routes.views.signin);
 	app.get('/privacy', routes.views.privacy);
+	app.get('/cart', routes.views.cart);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		products: [],
 	};
+	locals.formData = req.body || {};
 
 	// Load the current post
 	view.on('init', function (next) {
@@ -41,8 +42,19 @@ exports = module.exports = function (req, res) {
 
 	});
 
-	view.on('post', function(next) {
-		var q = keystone.list('User').model.updateOne().where('state', 'published').populate('cart');
+	view.on('post', { action: 'products' }, function (next) {
+		console.log(req);
+		// var resRedirect = res;
+		// var productId = req.params.id;
+		// Product.model.findById(productId)
+		// 	.exec(function (err, product) {
+		// 		console.log(`Product ${productId} added to cart`);
+		// 		req.session.User.cart.push(product);
+		// 	})
+		// 	.then(function (arg) {
+		// 		resRedirect.redirect("/products");
+		// 	})
+
 	})
 
 	// Render the view
