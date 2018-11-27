@@ -8,8 +8,10 @@
             <div class="row">
                 <!--Grid column-->
                 <div class="col-md-12 white-text text-center">
-                    <img src="/images/PNG file - Copy.png" class=" display-3 hero-img wow fadeInDown mx-auto d-block" data-wow-delay="0.3s" alt="Logo">
-                    <h5 class="text-uppercase pt-md-2 pt-sm-2 pt-2 pb-md-2 pb-sm-3 pb-2 white-text font-weight-bold wow fadeInDown" data-wow-delay="1.5s">"If
+                    <img src="/images/PNG file - Copy.png" class=" display-3 hero-img wow fadeInDown mx-auto d-block"
+                        data-wow-delay="0.3s" alt="Logo">
+                    <h5 class="text-uppercase pt-md-2 pt-sm-2 pt-2 pb-md-2 pb-sm-3 pb-2 white-text font-weight-bold wow fadeInDown"
+                        data-wow-delay="1.5s">"If
                         ye shall ask any thing in my name, I will do it."<br>-John 14:14
                     </h5>
                     <div class="wow fadeInUp" data-wow-delay="2.5s">
@@ -31,12 +33,15 @@
 change to men/women on scroll for mini-nav
 -->
 <div id="best">
-    <div class="">
+    <div class="container">
         <!-- Section: Products v.4 -->
         <section class="text-center py-5">
 
             <!-- Section heading -->
-            <a href="/products"><h3 class="font-weight-bold text-left grey-text">OUR STORE   <i class="fa fa-chevron-right" aria-hidden="true"></i></h3></a>
+            <a href="/products">
+                <h3 class="font-weight-bold text-left grey-text">OUR STORE <i class="fa fa-chevron-right" aria-hidden="true"></i></h3>
+            </a>
+            <hr>
 
             <!-- Grid row -->
             <div class="row">
@@ -47,7 +52,8 @@ change to men/women on scroll for mini-nav
                     <div class="card collection-card z-depth-1-half">
                         <!-- Card image -->
                         <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" class="img-fluid" alt="">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" class="img-fluid"
+                                alt="">
                             <div class="stripe dark">
                                 <a>
                                     <p>Red trousers
@@ -68,7 +74,8 @@ change to men/women on scroll for mini-nav
                     <div class="card collection-card z-depth-1-half">
                         <!-- Card image -->
                         <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" class="img-fluid" alt="">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" class="img-fluid"
+                                alt="">
                             <div class="stripe light">
                                 <a>
                                     <p>Sweatshirt
@@ -89,7 +96,8 @@ change to men/women on scroll for mini-nav
                     <div class="card collection-card z-depth-1-half">
                         <!-- Card image -->
                         <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" class="img-fluid" alt="">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" class="img-fluid"
+                                alt="">
                             <div class="stripe dark">
                                 <a>
                                     <p>Accessories
@@ -110,7 +118,8 @@ change to men/women on scroll for mini-nav
                     <div class="card collection-card z-depth-1-half">
                         <!-- Card image -->
                         <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg" class="img-fluid" alt="">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg" class="img-fluid"
+                                alt="">
                             <div class="stripe light">
                                 <a>
                                     <p>Sweatshirt
@@ -134,6 +143,52 @@ change to men/women on scroll for mini-nav
 </div>
 <div>
     <div class="container">
-        
+        <!-- Section heading -->
+        <a href="/blog" >
+            <h3 class="font-weight-bold text-left grey-text mt-5">OUR BLOG <i class="fa fa-chevron-right" aria-hidden="true"></i></h3>
+        </a>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <p class="dark-grey-text w-responsive mb-5">Duis aute irure dolor in reprehenderit in
+                    voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                    in culpa
+                    qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <!-- Grid row -->
+        <div class="row">
+            {{# each data.posts.results}}
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+                <!-- Featured image -->
+                <div class="view overlay rounded z-depth-2 mb-4">
+                    <img class="img-fluid" src="{{{cloudinaryUrl image crop='fit' }}}" alt="Sample image">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!-- Category -->
+                <a href="#!" class="pink-text">
+                    <h6 class="font-weight-bold mb-3"><i class="fa fa-map pr-2"></i>{{{categoryList categories
+                        prefix="Posted in "}}}</h6>
+                </a>
+                <!-- Post title -->
+                <h4 class="font-weight-bold mb-3"><strong>{{{title}}}</strong></h4>
+                <!-- Post data -->
+                <p>{{#if author.name.first}}By {{author.name.first}}{{/if}}<a class="font-weight-bold"></a>,
+                    {{{publishedDate}}}</p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text">{{{content.brief}}}</p>
+                <!-- Read more button -->
+                {{#if content.extended}}<a class="btn btn-pink btn-rounded btn-md">Read more</a>{{/if}}
+
+            </div>
+            <!-- Grid column -->
+            {{/each}}
+        </div>
     </div>
-</div>
