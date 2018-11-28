@@ -33,6 +33,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'cloudinary config': 'cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo',
+	'cookie secret': '9a6fd8708ff20f788b62c463a9a393099f1f5ecd4beccf8cf71a86d963f3014ab5b99329921b23cad57d093299717cc287cceab06ea7b57f971e639302df4b53',
 });
 
 // Load your project's Models
