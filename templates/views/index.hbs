@@ -16,7 +16,7 @@
                     </h5>
                     <div class="wow fadeInUp" data-wow-delay="2.5s">
                         <a class="btn btn-red btn-lg" href="/products">STORE</a>
-                        <a id="apparel" class="btn btn-outline-white btn-lg" href="/contact">Prayer Requests</a>
+                        <a id="apparel" class="btn btn-outline-black btn-lg" href="/contact">Prayer Requests</a>
                     </div>
                 </div>
                 <!--Grid column-->
@@ -45,18 +45,17 @@ change to men/women on scroll for mini-nav
 
             <!-- Grid row -->
             <div class="row">
-
-                <!-- Grid column -->
+                {{# each data.products.results}}
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+
                     <!-- Collection card -->
                     <div class="card collection-card z-depth-1-half">
                         <!-- Card image -->
                         <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" class="img-fluid"
-                                alt="">
+                            <img src="{{{cloudinaryUrl image crop='fit'}}}" class="img-fluid" alt="">
                             <div class="stripe dark">
-                                <a>
-                                    <p>Red trousers
+                                <a href="{{productUrl slug}}">
+                                    <p>{{{title}}}
                                         <i class="fa fa-angle-right"></i>
                                     </p>
                                 </a>
@@ -65,75 +64,10 @@ change to men/women on scroll for mini-nav
                         <!-- Card image -->
                     </div>
                     <!-- Collection card -->
+
                 </div>
                 <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-                    <!-- Collection card -->
-                    <div class="card collection-card z-depth-1-half">
-                        <!-- Card image -->
-                        <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" class="img-fluid"
-                                alt="">
-                            <div class="stripe light">
-                                <a>
-                                    <p>Sweatshirt
-                                        <i class="fa fa-angle-right"></i>
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Card image -->
-                    </div>
-                    <!-- Collection card -->
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
-                    <!-- Collection card -->
-                    <div class="card collection-card z-depth-1-half">
-                        <!-- Card image -->
-                        <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" class="img-fluid"
-                                alt="">
-                            <div class="stripe dark">
-                                <a>
-                                    <p>Accessories
-                                        <i class="fa fa-angle-right"></i>
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Card image -->
-                    </div>
-                    <!-- Collection card -->
-                </div>
-                <!-- Grid column -->
-
-                <!-- Fourth column -->
-                <div class="col-lg-3 col-md-6">
-                    <!-- Collection card -->
-                    <div class="card collection-card z-depth-1-half">
-                        <!-- Card image -->
-                        <div class="view zoom">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg" class="img-fluid"
-                                alt="">
-                            <div class="stripe light">
-                                <a>
-                                    <p>Sweatshirt
-                                        <i class="fa fa-angle-right"></i>
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Card image -->
-                    </div>
-                    <!-- Collection card -->
-                </div>
-                <!-- Fourth column -->
-
+                {{/each}}
             </div>
             <!-- Grid row -->
 
@@ -143,33 +77,33 @@ change to men/women on scroll for mini-nav
 </div>
 <!-- Streak -->
 <div class="streak streak-photo streak-long-2 rgba-gradient my-5" style="background-image: url('/images/ben-white-170383-unsplash.jpg');">
-	<div class="flex-center mask rgba-red-slight">
-		<div class="container">
+    <div class="flex-center mask rgba-red-slight">
+        <div class="container">
 
-			<!-- Section heading -->
-			
-			<!--First row-->
-			<div class="row text-left">
-				<div class="col-md-6">
-					<h3 class="text-left white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">Prayer Requests</h3>
-						<hr class="hr-light">
-                    <p class="white-text">We are commited to supporting our brothers and sisters in prayer.</p>    
-					<a href="/contact" class="btn btn-red darken-3 btn-md mt-3">Prayer Requests
-						<i class="fa fa-chevron-right ml-1"></i>
-					</a>
-				</div>
-			</div>
+            <!-- Section heading -->
 
-			<!--First row-->
+            <!--First row-->
+            <div class="row text-left">
+                <div class="col-md-6">
+                    <h3 class="text-left white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">Prayer Requests</h3>
+                    <hr class="hr-light">
+                    <h5 class="white-text">We are commited to supporting our brothers and sisters in prayer.</h5>
+                    <a href="/contact" class="btn btn-red darken-3 btn-lg mt-3">Prayer Requests
+                        <i class="fa fa-chevron-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
 
-		</div>
-	</div>
+            <!--First row-->
+
+        </div>
+    </div>
 </div>
 <!-- Streak -->
 <div>
     <div class="container">
         <!-- Section heading -->
-        <a href="/blog" >
+        <a href="/blog">
             <h3 class="font-weight-bold text-left grey-text mt-5">OUR BLOG <i class="fa fa-chevron-right" aria-hidden="true"></i></h3>
         </a>
         <hr>
@@ -184,7 +118,7 @@ change to men/women on scroll for mini-nav
         </div>
 
         <!-- Grid row -->
-        <div class="row">
+        <div class="row mb-5">
             {{# each data.posts.results}}
             <!-- Grid column -->
             <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
@@ -198,7 +132,7 @@ change to men/women on scroll for mini-nav
                 </div>
 
                 <!-- Category -->
-                <a href="#!" class="pink-text">
+                <a href="#!" class="red-text">
                     <h6 class="font-weight-bold mb-3"><i class="fa fa-map pr-2"></i>{{{categoryList categories
                         prefix="Posted in "}}}</h6>
                 </a>
@@ -210,7 +144,7 @@ change to men/women on scroll for mini-nav
                 <!-- Excerpt -->
                 <p class="dark-grey-text">{{{content.brief}}}</p>
                 <!-- Read more button -->
-                {{#if content.extended}}<a class="btn btn-pink btn-rounded btn-md">Read more</a>{{/if}}
+                {{#if content.extended}}<a class="btn btn-danger btn-md" href="{{postUrl slug}}">Read more</a>{{/if}}
 
             </div>
             <!-- Grid column -->

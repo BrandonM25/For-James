@@ -85,6 +85,10 @@ h5 {
   padding-top: 90px;
 }
 
+.cart{
+  margin-top: 100px;
+}
+
 @media (max-width: 740px) {
   html, body, header, .jarallax {
     height: 100vh;

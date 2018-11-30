@@ -18,7 +18,7 @@ exports = module.exports = function (req, res) {
 	};
 	locals.formData = req.body || {};
 
-	// Load all categories
+	// Load all productcategories
 	view.on('init', function (next) {
 
 		keystone.list('ProductCategory').model.find().sort('name').exec(function (err, results) {
@@ -56,7 +56,7 @@ exports = module.exports = function (req, res) {
 		}
 	});
 
-	// Load the posts
+	// Load the products
 	view.on('init', function (next) {
 
 		var q = keystone.list('Product').paginate({

@@ -23,8 +23,8 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'About', key: 'about', href: '/about' },
 		{ label: 'Store', key: 'store', href: '/products' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
+		// { label: 'Gallery', key: 'gallery', href: '/gallery' },
+		{ label: 'Prayer Requests', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
 	//Initialize cart

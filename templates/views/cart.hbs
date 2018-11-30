@@ -1,23 +1,79 @@
-<div class="container">
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
+{{!-- <div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
       {{# each cartContents}}
-    <tr>
-      <th scope="row"></th>
-      <td>{{{this.name}}}</td>
-      <td>{{{this.price}}}</td>
-      <td>{{{this.quantitiy}}}</td>
-      <td><img class="img-fluid" src="{{{this.imageUrl}}}"></img></td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+      <tr>
+        <th scope="row"></th>
+        <td>{{{this.name}}}</td>
+        <td>{{{this.price}}}</td>
+        <td>{{{this.quantitiy}}}</td>
+        <td><img class="img-fluid" src="{{{this.imageUrl}}}"></img></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div> --}}
+
+<div class="container cart">
+  <section class="section my-5 pb-5">
+    <div class="card card-ecommerce">
+      <div class="card-body">
+        <!-- Shopping Cart Table -->
+        <div class="table-responsive">
+          <table class="table product-table">
+            <!-- Table head -->
+            <thead class="mdb-color lighten-5">
+              <tr>
+                <th></th>
+                <th class="font-weight-bold">
+                  <strong>Product</strong>
+                </th>
+                <th class="font-weight-bold">
+                  <strong>QTY</strong>
+                </th>
+                <th class="font-weight-bold">
+                  <strong>Price</strong>
+                </th>
+              </tr>
+            </thead>
+            <!-- Table head -->
+
+            <!-- Table body -->
+            <tbody>
+              {{# each cartContents}}
+              <tr>
+                <th scope="row">
+                  <img src="{{{this.imageUrl}}}" alt="" class="img-fluid a-depth-0">
+                </th>
+                <td>
+                  <h5 class="mt-3">
+                    <strong>{{{this.name}}}</strong>
+                  </h5>
+                </td>
+                <td>
+                  <h5>{{{this.quantity}}}</h5>
+                </td>
+                <td>
+                  <h5>{{{this.price}}}</h5>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Remove item">X
+                  </button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
