@@ -25,9 +25,9 @@ h5 {
   color: #b71c1c;
 }
 
-#best {
+/* #best {
   background-color: whitesmoke;
-}
+} */
 
 .branding {
   height: 50px;
@@ -63,7 +63,20 @@ h5 {
   background-size: cover; 
   background-position: center center;
 }
-
+.row.no-gutters{
+  margin-right: 0;
+  margin-left: 0;
+}
+.about-view{
+  height: 600px;
+  background-image: url('/images/DSC00247.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center;
+}
+.about{
+  background-color: whitesmoke;
+}
 .register-view{
   height: 100%;
 }
