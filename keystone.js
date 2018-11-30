@@ -62,8 +62,8 @@ keystone.set('nav', {
 	users: 'users',
 });
 
-keystone.set('signin logo', '/public/images/PNG file - Copy.png', 200, 250);
-keystone.set('favicon', '/public/images/PNG file - Copy.png');
+// keystone.set('signin logo', '/public/images/PNG file - Copy.png', 200, 250);
+// keystone.set('favicon', '/public/images/PNG file - Copy.png');
 
 // Start Keystone to connect to your database and initialise the web server
 
