@@ -31,6 +31,16 @@ exports.initLocals = function (req, res, next) {
 	if (!req.session.cart) {
 		req.session.cart = [];
 	}
+
+	// Calculate total quantity and price of items in cart
+	var cartTotalQty = 0;
+	var cartTotalPrice = 0;
+	req.session.cart.forEach((item) => {
+		cartTotalQty += 1;
+		cartTotalPrice += item.price;
+	});
+	res.locals.cartTotalQty = cartTotalQty;
+	res.locals.cartTotalPrice = cartTotalPrice.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	next();
 };
 

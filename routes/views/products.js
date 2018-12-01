@@ -87,7 +87,11 @@ exports = module.exports = function (req, res) {
 		Product.model.findById(productId)
 			.exec(function (err, product) {
 				console.log(`Product ${productId} added to cart`);
-				req.session.cart.push(product);
+				var newProduct = {
+					product: product,
+					quantity: req.body.qty
+				}
+				req.session.cart.push(newProduct);
 			})
 			.then(function (arg) {
 				resRedirect.redirect("/products");

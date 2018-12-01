@@ -49,7 +49,7 @@ exports = module.exports = function (app) {
 	app.all('/signout', routes.views.signout);
 	app.all('/signin', routes.views.signin);
 	app.get('/privacy', routes.views.privacy);
-	app.get('/cart', routes.views.cart);
+	app.all('/cart', routes.views.cart);
 	app.get('/returns', routes.views.return);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

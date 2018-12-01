@@ -55,7 +55,9 @@ exports = module.exports = function (req, res) {
 		// 		resRedirect.redirect("/products");
 		// 	})
 
-	})
+	});
+
+	view.on
 
 	// Render the view
 	view.render('product');

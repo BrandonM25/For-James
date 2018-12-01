@@ -15,7 +15,6 @@
                     <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
                         <strong>{{{data.product.title}}}</strong>
                     </h2>
-                    <span class="badge badge-danger product mb-4 ml-xl-0 ml-4">bestseller</span>
                     <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
                         {{#if data.product.price}}<span class="red-text font-weight-bold">
                             <strong>{{{data.product.price}}}</strong>
@@ -49,34 +48,7 @@
                         </div>
                         <!-- Accordion card -->
 
-                        <!-- Accordion card -->
-                        <div class="card">
 
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingTwo2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-                                    aria-expanded="false" aria-controls="collapseTwo2">
-                                    <h5 class="mb-0">
-                                        Details
-                                        <i class="fa fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-                                data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                                    Brunch 3 wolf moon
-                                    tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card -->
 
                         <!-- Accordion card -->
                         <div class="card">
@@ -86,7 +58,7 @@
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
                                     aria-expanded="false" aria-controls="collapseThree3">
                                     <h5 class="mb-0">
-                                        Shipping
+                                        Details
                                         <i class="fa fa-angle-down rotate-icon"></i>
                                     </h5>
                                 </a>
@@ -96,12 +68,16 @@
                             <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
                                 data-parent="#accordionEx">
                                 <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                                    Brunch 3 wolf moon
-                                    tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et.
+                                    <span><h6>QTY</h6></span>
+                                    <span class="qty">1 </span>
+                                    <div class="btn-group radio-group ml-2 qty-btn" data-toggle="buttons">
+                                        <label class="btn btn-sm btn-primary btn-rounded qty-minus">
+                                            <input type="radio" name="options" id="option1">&mdash;
+                                        </label>
+                                        <label class="btn btn-sm btn-primary btn-rounded qty-add">
+                                            <input type="radio" name="options" id="option2">+
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,8 +92,9 @@
                                 <div class="col-md-12 text-center text-md-left text-md-right">
                                     <form method="post" action="/products">
                                         <input name="id" value="{{{data.product.id}}}" hidden>
+                                        <input name="qty" value="1" hidden>
                                         <button class="btn btn-primary btn-rounded" type="submit">
-                                        <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button> 
+                                            <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
                                     </form>
                                 </div>
                             </div>
