@@ -6,38 +6,68 @@
 			<!--Grid row-->
 			<div class="row pt-lg-5 mt-lg-5">
 				<!--Grid column-->
-				<div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft" data-wow-delay="0.3s">
-					<h1 class="display-4 head">Prayer Requests</h1>
+				<div class="col-md-6 mb-3 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft prayer" data-wow-delay="0.3s">
+					<h1 class="h1-responsive head">Prayer Requests</h1>
 					<hr class="hr-light">
-					<h5 class="mb-3">We are commited to supporting our brothers and sisters in prayer. Let us join with you in your struggles and thanksgivings, by making your requsts known to the Lord! </h5>
+					<h6 class="mb-2">We are commited to supporting our brothers and sisters in prayer. Let us join with you in your
+						struggles and thanksgivings, by making your requsts known to the Lord! </h6>
 				</div>
 				<!--Grid column-->
-				<div class="col-sm-6 col-md-6">
+				<div class="col-sm-6 col-md-6 prayer-form">
 					{{#if enquirySubmitted}}
-					<h3>Thanks for getting in touch.</h3>
+					<h3 class="white-text">Thanks for getting in touch.</h3>
 					{{else}}
-					<form method="post">
-						<input type="hidden" name="action" value="contact">
-						<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-							<label class="white-text">Name</label>
-							<input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
+					<!-- Material form login -->
+					<div class="card">
+
+						<h5 class="card-header red darken-4 white-text text-center py-4">
+							<strong>Contact Us</strong>
+						</h5>
+
+						<!--Card content-->
+						<div class="card-body px-lg-5 pt-0">
+
+							<!-- Form -->
+							<form class="text-center" style="color: #757575;" method="post">
+								<input type="hidden" name="action" value="contact">
+								<div class="form-row">
+									<div class="col">
+										<!-- First name -->
+										<div class="md-form {{#if validationErrors.name}}has-error{{/if}}">
+											<input type="text" id="materialRegisterFormFirstName" class="form-control" name="name.full" value="{{formData.[name.full]}}">
+											<label for="materialRegisterFormFirstName">Full name</label>
+										</div>
+									</div>
+								</div>
+								<!-- Email -->
+								<div class="md-form {{#if validationErrors.email}}has-error{{/if}}">
+									<input type="email" id="materialLoginFormEmail" class="form-control" name="email" value="{{formData.email}}">
+									<label for="materialLoginFormEmail">E-mail</label>
+								</div>
+
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormFirstName" class="form-control" name="phone" value="{{formData.phone}}">
+									<label for="materialRegisterFormFirstName">Phone Number</label>
+								</div>
+
+								<!--Message-->
+								<div class="md-form {{#if validationErrors.message}}has-error{{/if}}">
+									<textarea type="text" id="materialContactFormMessage" name="message" class="form-control md-textarea" rows="3"></textarea>
+									<label for="materialContactFormMessage">Message</label>
+								</div>
+
+								<!-- Sign in button -->
+								<div class="form-actions">
+									<button class="btn btn-outline-red btn-block my-4 waves-effect z-depth-0" type="submit">Send Message</button>
+								</div>
+
+							</form>
+							<!-- Form -->
+
 						</div>
-						<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-							<label class="white-text">Email</label>
-							<input type="email" name="email" class="form-control" value="{{formData.email}}">
-						</div>
-						<div class="form-group">
-							<label class="white-text">Phone</label>
-							<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-						</div>
-						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-							<label class="white-text">Prayer Request</label>
-							<textarea name="message" placeholder="Your Request..." rows="4" class="form-control">{{formData.message}}</textarea>
-						</div>
-						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Send</button>
-						</div>
-					</form>
+
+					</div>
+					<!-- Material form login -->
 					{{/if}}
 				</div>
 			</div>
@@ -48,48 +78,5 @@
 	<!-- Mask & flexbox options-->
 </div>
 <!-- Full Page Intro -->
+<div class="container"></div>
 
-{{!-- <div class="container">
-	<h1>Contact Us</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4 col-md-4">
-			{{#if enquirySubmitted}}
-			<h3>Thanks for getting letting us partner with you in your prayer.</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="contact">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full" class="form-control" value="{{formData.[name.full]}}">
-				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
-				</div>
-			</form>
-			{{/if}}
-		</div>
-	</div>
-</div> --}}

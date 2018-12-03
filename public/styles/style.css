@@ -57,8 +57,9 @@ h5 {
 }
 
 .product-view{
+  padding-top: 150px;
   height: 600px;
-  background-image: url('/images/DSC00032.jpg'); 
+  background-image: url('/images/Shoot/DSC00228.jpg'); 
   background-repeat: no-repeat; 
   background-size: cover; 
   background-position: center center;
@@ -89,6 +90,8 @@ h5 {
   margin-top: 100px;
 }
 
+
+
 @media (max-width: 740px) {
   html, body, header, .jarallax {
     height: 100vh;
@@ -98,6 +101,12 @@ h5 {
 @media (max-width: 740px) {
   .jarallax {
     background-color: rgba(242, 246, 248, 1);
+  }
+  .prayer{
+    padding-top: 100px;
+  }
+  .prayer-form{
+    padding-bottom: 150px;
   }
 }
 
