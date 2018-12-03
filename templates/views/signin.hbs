@@ -1,10 +1,10 @@
-<div class="container my-5">
+{{!-- <div class="container my-5">
     <!-- Material form login -->
     <div class="row">
         <div class="col-sm-6 col-md-6">
             <form method="post">
                 <input type="hidden" name="action" value="signin">
-                
+
                 <div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
                     <label class="white-text">Email</label>
                     <input type="email" name="email" class="form-control" value="{{formData.email}}">
@@ -19,4 +19,76 @@
             </form>
         </div>
     </div>
+</div> --}}
+
+<!-- Material form register -->
+<!-- Full Page Intro -->
+<div class="view register-view" style="background-image: url('/images/thecross.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
+        <!-- Content -->
+        <div class="container">
+            <!--Grid row-->
+            <div class="row pt-lg-5 mt-lg-5">
+                <!--Grid column-->
+                <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left wow fadeInLeft register-head"
+                    data-wow-delay="0.3s">
+                    <h1 class="display-4">Sign In</h1>
+                    <hr class="hr-light">
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-md-6 col-xl-5 mb-4">
+                    <!-- Material form login -->
+                    <div class="card">
+
+                        <h5 class="card-header red darken-4 white-text text-center py-4">
+                            <strong>Sign in</strong>
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0">
+
+                            <!-- Form -->
+                            <form class="text-center" style="color: #757575;" method="post">
+                                <input type="hidden" name="action" value="signin">
+                                <!-- Email -->
+                                <div class="md-form {{#if validationErrors.email}}has-error{{/if}}">
+                                    <input type="email" id="materialLoginFormEmail" class="form-control" name="email" value="{{formData.email}}">
+                                    <label for="materialLoginFormEmail">E-mail</label>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="md-form {{#if validationErrors.password}}has-error{{/if}}">
+                                    <input type="password" id="materialLoginFormPassword" class="form-control" name="password" value="{{formData.password}}">
+                                    <label for="materialLoginFormPassword">Password</label>
+                                </div>
+
+                                <!-- Sign in button -->
+                                <div class="form-actions">
+                                    <button class="btn btn-outline-red btn-block my-4 waves-effect z-depth-0" type="submit">Sign
+                                        in</button>
+                                </div>
+                                <!-- Register -->
+                                <p>Not a member?
+                                    <a href="/register">Register</a>
+                                </p>
+
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+                    <!-- Material form login -->
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
 </div>
+<!-- Full Page Intro -->
