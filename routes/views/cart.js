@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
                 id: item.product._id,
                 name: item.product.title,
                 price: item.product.price,
+                //priceString: item.product.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'),
                 quantity: item.quantity,
                 imageUrl: item.product.image.url,
             };
@@ -23,6 +24,7 @@ exports = module.exports = function (req, res) {
         }
     });
 
+    //Remove item from cart
     res.locals.cartContents = cartContents;
 
     view.on('post', function (next) {
@@ -40,7 +42,15 @@ exports = module.exports = function (req, res) {
         
         resRedirect.redirect("/cart");
 
-	})
+    })
+    
+    // //Cart total
+    // var totalPrice = 0;
+	// req.session.cart.forEach((item) => {
+	// 	totalPrice += item.product.price;
+	// });
+	// res.locals.totalPrice = totalPrice;
+	// res.locals.totalPriceString = totalPrice.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 
     view.render('cart');
 };
